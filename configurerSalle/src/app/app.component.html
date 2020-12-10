@@ -1,0 +1,20 @@
+
+<div class = "gauche">
+  <input (input)="salle.nom = $event.target.value" placeholder="nom de la salle"><br>
+
+
+
+  <input  (input)="salle.nbPlacesAssises = $event.target.value" placeholder="nb assis"><br>
+  <input  (input)="salle.nbPlacesDebouts = $event.target.value" placeholder="nb debout"><br>
+  <input (input)="salle.nbPlacesAssises = $event.target.value" placeholder="prix"><br>
+
+  <button (click) = "this.salleJson()">afficher salle dans la console</button><br>
+</div>
+
+<div class = "droite">
+  <button (click) = "this.salle.ajouterEquipement()">ajouter équipement</button>
+
+  <div *ngFor = "let equipement of this.salle.listEquipements; index as index">
+    <app-equipement [equipement] = "equipement"></app-equipement> <button (click) = "this.salle.supprimerEquipement(index)">supprimer Equipement</button>
+  </div>
+</div>
