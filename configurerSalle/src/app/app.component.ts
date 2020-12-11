@@ -1,3 +1,4 @@
+import { DbRequestingService } from './../services/db-requesting/db-requesting.service';
 import { Equipement } from './../classes/equipement/equipement';
 import { Salle } from './../classes/salles/salle';
 import { Component } from '@angular/core';
@@ -10,11 +11,14 @@ export class AppComponent {
 
   salle : Salle = new Salle();
   name : string = "coucou";
+  messageSucces : string = "";
+  messageEchec : string = "";
 
+  constructor(private dbRequest : DbRequestingService){}
 
-  set nomSalle(event){
-    this.salle.nom = event.target.value;;
-  }
+  // set nomSalle(event){
+  //   this.salle.nom = event.target.value;
+  // }
   printSalle(){
     if(this.checkSalle()) console.log(this.salle);
 
@@ -33,6 +37,10 @@ export class AppComponent {
       }
     })
     return true;
+  }
+
+  getRequest(){
+    this.dbRequest.recupererSalles();
   }
 
 }

@@ -12,4 +12,5 @@ export class EquipementComponent {
   constructor() {
   }
 
+
 }

@@ -1,7 +1,7 @@
 import { Equipement } from './../equipement/equipement';
 export class Salle {
 
-
+  id : number;
   nom : string;
   prix : number;
   nbPlacesAssises : number;

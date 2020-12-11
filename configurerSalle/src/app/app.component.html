@@ -1,14 +1,15 @@
 
 <div class = "gauche">
   <input (input)="salle.nom = $event.target.value" placeholder="nom de la salle"><br>
-
-
-
   <input  (input)="salle.nbPlacesAssises = $event.target.value" placeholder="nb assis"><br>
   <input  (input)="salle.nbPlacesDebouts = $event.target.value" placeholder="nb debout"><br>
   <input (input)="salle.nbPlacesAssises = $event.target.value" placeholder="prix"><br>
 
+
   <button (click) = "this.salleJson()">afficher salle dans la console</button><br>
+  <button (click) = "this.getRequest()">getRequest</button><br>
+  <p *ngIf = "this.messageSucces">{{messageSucces}}</p>
+  <p *ngIf = "this.messageEchec">{{messageEchec}}</p>
 </div>
 
 <div class = "droite">
